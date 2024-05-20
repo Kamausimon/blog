@@ -54,7 +54,9 @@
 
     <!--main body-->
     <div>
+        <!--nav 2-->
 
+        <!--end of nav2-->
 
     </div>
     <!--end of main-->

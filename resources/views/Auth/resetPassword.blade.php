@@ -3,10 +3,12 @@
 
 @include('partials/_head')
 
-<body class="bg-gray-400">
+<body class="bg-slate-700">
+
+    @include('partials._nav')
 
     <!--start of reset password div-->
-    <div class="w-full max-w-xs mx-auto mt-60">
+    <div class="w-full max-w-xs mx-auto mt-24">
         <form action="" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
             <div class="mb-4 p-6">
                 <h2 class="block text-gray-700 text-xl font-bold mb-3 p-3">Reset Password</h2>

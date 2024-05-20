@@ -3,20 +3,20 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('Auth.welcome');
 });
 Route::get('/register', function () {
-    return view('register');
+    return view('Auth.register');
 });
 Route::get('/login', function () {
-    return view('login');
+    return view('Auth.login');
 });
 Route::get('/forgotPassword', function () {
-    return view('forgotPassword');
+    return view('Auth.forgotPassword');
 });
 Route::get('/resetPassword', function () {
-    return view('resetPassword');
+    return view('Auth.resetPassword');
 });
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('profile.dashboard');
 });
