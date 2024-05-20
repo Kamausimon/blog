@@ -6,10 +6,11 @@
 
     <!--sidebar-->
     <div class="w-64 bg-white p-4 shadow-lg h-screen">
-        <h2 class="text-2xl font-bold mb-4 flex items-center mt-36"> <svg class="mr-2" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 512 512">
+        <img class="block " src="/images/the-crying-wall-high-resolution-logo-black-transparent.png" alt="logo">
+        <h2 class="text-2xl font-bold mb-4 flex items-center mt-24"> <svg class="mr-2" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 512 512">
                 <path fill="currentColor" d="M416 174.74V48h-80v58.45L256 32L0 272h64v208h144V320h96v160h144V272h64z" />
             </svg>DashBoard</h2>
-        <div class="space-y-9 h-5/6 flex flex-col mt-8 ">
+        <div class="space-y-9 h-5/6 flex flex-col mt-16 ml-3 ">
             <button class="w-full flex items-center space-x-2 text-gray-600 hover:bg-gray-100 p-2 rounded">
                 <svg class="mr-2" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 20 20">
                     <g fill="currentColor">
