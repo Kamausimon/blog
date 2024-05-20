@@ -2,10 +2,10 @@
 <html>
 @include('partials._head')
 
-<body>
+<body class="flex">
 
     <!--sidebar-->
-    <div class="w-64 bg-white p-4 shadow-lg h-screen">
+    <div class="lg:fixed w-64 bg-white p-4 shadow-lg h-screen">
         <img class="block " src="/images/the-crying-wall-high-resolution-logo-black-transparent.png" alt="logo">
         <h2 class="text-2xl font-bold mb-4 flex items-center mt-24"> <svg class="mr-2" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 512 512">
                 <path fill="currentColor" d="M416 174.74V48h-80v58.45L256 32L0 272h64v208h144V320h96v160h144V272h64z" />
@@ -53,8 +53,19 @@
     <!--end of sidebar-->
 
     <!--main body-->
-    <div>
+    <div class=" ml-64 w-full bg-slate-200">
         <!--nav 2-->
+        <div class="p-6 bg-slate-200">
+            <div>
+                <form action="">
+
+                    <input type="search" name="q" placeholder="search here" class="bg-slate-400 h-8 mr-0 rounded-md text-slate-600">
+                    <button class="px-2 py-1 bg-slate-400 h-8">Search</button>
+                </form>
+            </div>
+
+
+        </div>
 
         <!--end of nav2-->
 
