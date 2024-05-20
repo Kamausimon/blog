@@ -52,6 +52,13 @@
     </div>
     <!--end of sidebar-->
 
+    <!--main body-->
+    <div>
+
+
+    </div>
+    <!--end of main-->
+
 
 
     @include('partials._footer')

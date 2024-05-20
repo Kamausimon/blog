@@ -4,7 +4,7 @@
 @include('partials/_head')
 
 <body class="bg-slate-700 text-white">
-
+    @include('partials._nav')
 
     <!--main section -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-3 p-11">

@@ -5,6 +5,7 @@
 
 <body class="bg-gray-400">
 
+
     <!--div housing the forgot password-->
     <div class="w-full max-w-xs mx-auto mt-60">
         <form action="" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
