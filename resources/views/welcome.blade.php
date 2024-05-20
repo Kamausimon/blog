@@ -1,12 +1,7 @@
 <!doctype html>
 <html>
 
-<head>
-    <meta charset="utf-8">
-    <title>Blog App</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    @vite('resources/css/app.css')
-</head>
+@include('partials/_head')
 
 <body class="bg-slate-700 text-white">
     <!--navigation and logo area -->

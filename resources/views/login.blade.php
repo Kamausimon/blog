@@ -2,14 +2,9 @@
 
 <html>
 
-<head>
-    <meta charset="utf-8">
-    <title>Blog App</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    @vite('resources/css/app.css')
-</head>
+@include('partials/_head')
 
-<body class="bg-purple-500">
+<body class="bg-gray-400">
     <!--div housing the login form-->
     <div class="w-full max-w-xs mx-auto mt-60">
         <form action="" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">

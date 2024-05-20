@@ -1,14 +1,9 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-    <meta charset="utf-8">
-    <title>Blog App</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    @vite('resources/css/app.css')
-</head>
+@include('partials/_head')
 
-<body class="bg-purple-500">
+<body class="bg-gray-400">
 
     <!--div housing the registration form-->
     <div class="w-full max-w-xs mx-auto mt-48">
