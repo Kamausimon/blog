@@ -93,9 +93,8 @@
     <!--- end of main section-->
 
     <!--footer section-->
-    <div>
 
-    </div>
+    @include('partials._footer')
     <!--end of footer-->
 </body>
 
