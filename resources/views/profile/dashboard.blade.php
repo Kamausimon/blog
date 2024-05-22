@@ -11,15 +11,19 @@
                 <path fill="currentColor" d="M416 174.74V48h-80v58.45L256 32L0 272h64v208h144V320h96v160h144V272h64z" />
             </svg>DashBoard</h2>
         <div class="space-y-9 h-5/6 flex flex-col mt-16 ml-3 ">
-            <button class="w-full flex items-center space-x-2 text-gray-600 hover:bg-gray-100 p-2 rounded">
-                <svg class="mr-2" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 20 20">
-                    <g fill="currentColor">
-                        <path fill-rule="evenodd" d="M11.5 4.5A1.5 1.5 0 0 0 10 6v3.5H6.5a1.5 1.5 0 0 0 0 3H10V16a1.5 1.5 0 0 0 3 0v-3.5h3.5a1.5 1.5 0 0 0 0-3H13V6a1.5 1.5 0 0 0-1.5-1.5" clip-rule="evenodd" opacity="0.2" />
-                        <path d="M5 10.5a.5.5 0 0 1 0-1h10a.5.5 0 0 1 0 1z" />
-                        <path d="M9.5 5a.5.5 0 0 1 1 0v10a.5.5 0 0 1-1 0z" />
-                    </g>
-                </svg> new Post
-            </button>
+
+            <a href="/create">
+                <button class="w-full flex items-center space-x-2 text-gray-600 hover:bg-gray-100 p-2 rounded">
+                    <svg class="mr-2" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 20 20">
+                        <g fill="currentColor">
+                            <path fill-rule="evenodd" d="M11.5 4.5A1.5 1.5 0 0 0 10 6v3.5H6.5a1.5 1.5 0 0 0 0 3H10V16a1.5 1.5 0 0 0 3 0v-3.5h3.5a1.5 1.5 0 0 0 0-3H13V6a1.5 1.5 0 0 0-1.5-1.5" clip-rule="evenodd" opacity="0.2" />
+                            <path d="M5 10.5a.5.5 0 0 1 0-1h10a.5.5 0 0 1 0 1z" />
+                            <path d="M9.5 5a.5.5 0 0 1 1 0v10a.5.5 0 0 1-1 0z" />
+                        </g>
+                    </svg> new Post
+                </button>
+            </a>
+
 
             <button class="w-full flex items-center space-x-2 text-gray-600 hover:bg-gray-100 p-2 rounded">
                 <svg class="mr-2" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
@@ -77,6 +81,7 @@
         </div>
 
         <!--end of nav2-->
+
 
     </div>
     <!--end of main-->

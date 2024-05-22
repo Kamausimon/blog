@@ -11,14 +11,16 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        //fetch data from the database
+        //pass that data to the view
     }
 
     /**
      * Show the form for creating a new resource.
      */
     public function create()
-    {
+    { //return the view
+        return View('post.create');
     }
 
     /**
@@ -26,7 +28,8 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //stores the data generated from the create
+        //validates the data to make sure it is correct before storing
     }
 
     /**
@@ -34,7 +37,8 @@ class PostController extends Controller
      */
     public function show(string $id)
     {
-        //
+        //shows one specific post from the db
+
     }
 
     /**
@@ -42,7 +46,7 @@ class PostController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        //for editing the post
     }
 
     /**
@@ -50,7 +54,7 @@ class PostController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        //for updating the [post]
     }
 
     /**
@@ -58,6 +62,6 @@ class PostController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        //for deleting the post
     }
 }

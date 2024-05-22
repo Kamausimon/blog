@@ -20,3 +20,6 @@ Route::get('/resetPassword', function () {
 Route::get('/dashboard', function () {
     return view('profile.dashboard');
 });
+Route::get('/create', function () {
+    return view('post.create');
+});
