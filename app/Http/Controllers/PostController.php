@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use app\Models\Post;
 
 class PostController extends Controller
 {
@@ -28,8 +29,19 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //stores the data generated from the create
-        //validates the data to make sure it is correct before storing
+        //validate the data
+        $request->validate([
+            'title' => 'required|max:255',
+            'context' => 'required'
+        ]);
+        //store the dta in the database
+        $post = new Post;
+        $post->title = $request->input('title');
+        $post->context = $request->input('context');
+        $post->save();
+
+        //redirect the user to show the post
+        return redirect()->route('post.show', $post);
     }
 
     /**
