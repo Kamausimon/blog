@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -20,6 +21,7 @@ Route::get('/resetPassword', function () {
 Route::get('/dashboard', function () {
     return view('profile.dashboard');
 });
-Route::get('/create', function () {
+Route::get('/posts/create', function () {
     return view('post.create');
 });
+Route::post('/posts', [PostController::class, 'store']);

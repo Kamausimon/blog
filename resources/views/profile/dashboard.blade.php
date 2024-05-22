@@ -12,7 +12,7 @@
             </svg>DashBoard</h2>
         <div class="space-y-9 h-5/6 flex flex-col mt-16 ml-3 ">
 
-            <a href="/create">
+            <a href="/posts/create">
                 <button class="w-full flex items-center space-x-2 text-gray-600 hover:bg-gray-100 p-2 rounded">
                     <svg class="mr-2" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 20 20">
                         <g fill="currentColor">

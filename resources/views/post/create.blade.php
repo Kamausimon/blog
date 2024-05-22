@@ -15,7 +15,8 @@
         </div>
         <div class="bg-white p-10 rounded shadow">
 
-            <form action="">
+            <form action="/posts" method="POST">
+                @csrf
                 <label for="title" class="block mb-2 font-bold text-gray-700">Title:</label>
                 <input type="text" name="title" id="title" class="w-full p-2 border rounded shadow-inner">
                 <label for="context" class="block mb-2 font-bold text-gray-700">Content:</label>
