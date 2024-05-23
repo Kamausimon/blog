@@ -61,6 +61,13 @@ class PostController extends Controller
     public function edit(string $id)
     {
         //for editing the post
+        $post = Post::find($id);
+
+        if (!$post) {
+            abort(404);
+        }
+
+        return view('post.edit')->with('post', $post);
     }
 
     /**

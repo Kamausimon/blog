@@ -11,15 +11,21 @@
 
         <div class="flex space-x-6 ml-6">
             <div>
-                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-2 ml-2 mr-2">
-                    Edit
-                </button>
+                <a href="{{route('post.edit', ['id'=> $post->id])}}">
+                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-2 ml-2 mr-2">
+                        Edit
+                    </button>
+                </a>
+
             </div>
 
             <div>
-                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-2 ml-2">
-                    Cancel
-                </button>
+                <a href="/dashboard">
+                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-2 ml-2">
+                        Cancel
+                    </button>
+                </a>
+
             </div>
 
         </div>
