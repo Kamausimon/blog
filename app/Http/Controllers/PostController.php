@@ -40,6 +40,7 @@ class PostController extends Controller
         $post->context = $request->input('context');
         $post->save();
 
+
         //redirect the user to show the post
         return redirect()->route('post.show', $post);
     }
