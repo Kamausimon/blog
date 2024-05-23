@@ -76,6 +76,28 @@ class PostController extends Controller
     public function update(Request $request, string $id)
     {
         //for updating the [post]
+        //validate the data
+        $request->validate([
+            'title' => 'required|max:255',
+            'context' => 'required'
+        ]);
+
+        //find the pos in the db by id 
+        $post = Post::find($id);
+
+        //if id doesnt exit return a 404 error
+        if (!$post) {
+            abort(404);
+        }
+        //if present update
+        $post->title = $request->input('title');
+        $post->context = $request->input('context');
+
+        //save the post
+        $post->save();
+
+        //redirect the user to show the post
+        return redirect()->route('post.show', ['id' => $post->id]);
     }
 
     /**
