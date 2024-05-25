@@ -12,8 +12,15 @@ class PostController extends Controller
      */
     public function index()
     {
-        //fetch data from the database
-        //pass that data to the view
+        try {
+            //fetch data from the database
+            $posts = Post::all();
+            var_dump($posts);
+            //pass that data to the view
+            return view('post.index', compact('posts'));
+        } catch (\Exception $e) {
+            return back()->withErrors(['error' => 'unable to retrieve the posts']);
+        }
     }
 
     /**
@@ -106,5 +113,6 @@ class PostController extends Controller
     public function destroy(string $id)
     {
         //for deleting the post
+
     }
 }
