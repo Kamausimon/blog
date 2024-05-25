@@ -29,4 +29,4 @@ Route::post('/posts', [PostController::class, 'store']);
 Route::get('/post/{id}', [PostController::class, 'show'])->name('post.show');
 Route::get('/post/{id}/edit', [PostController::class, 'edit'])->name('post.edit');
 Route::put('/post/{id}', [PostController::class, 'update'])->name('post.update');
-Route::get('/allposts', [PostController::class, 'index'])->name('post.index');
+Route::get('/allPosts', [PostController::class, 'index'])->name('post.index');

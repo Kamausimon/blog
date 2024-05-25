@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
+use illuminate\Support\Facades\DB;
 
 class PostController extends Controller
 {
@@ -14,10 +15,9 @@ class PostController extends Controller
     {
         try {
             //fetch data from the database
-            $posts = Post::all();
-            var_dump($posts);
+            $posts = DB::table('posts')->get();
             //pass that data to the view
-            return view('post.index', compact('posts'));
+            return view('post.index', compact($posts));
         } catch (\Exception $e) {
             return back()->withErrors(['error' => 'unable to retrieve the posts']);
         }
@@ -46,7 +46,6 @@ class PostController extends Controller
         $post->title = $request->input('title');
         $post->context = $request->input('context');
         $post->save();
-
 
         //redirect the user to show the post
         return redirect()->route('post.show', $post);

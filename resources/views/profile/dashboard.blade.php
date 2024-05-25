@@ -82,7 +82,7 @@
         <!--end of nav2-->
 
         <!-- render the data div -->
-        @include('post.index')
+
         <!-- end of data rendering div -->
 
     </div>
