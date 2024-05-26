@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\dashboardController;
 use App\Http\Controllers\PostController;
 use App\Models\Post;
 use Illuminate\Support\Facades\Route;
@@ -25,8 +26,13 @@ Route::get('/dashboard', function () {
 Route::get('/posts/create', function () {
     return view('post.create');
 });
+//postcontroller
 Route::post('/posts', [PostController::class, 'store']);
 Route::get('/post/{id}', [PostController::class, 'show'])->name('post.show');
 Route::get('/post/{id}/edit', [PostController::class, 'edit'])->name('post.edit');
 Route::put('/post/{id}', [PostController::class, 'update'])->name('post.update');
 Route::get('/allPosts', [PostController::class, 'index'])->name('post.index');
+Route::delete('/post/{id}', [PostController::class, 'destroy'])->name('post.destroy');
+
+//dashboard controller
+Route::get('/dashboard', [dashboardController::class, 'index'])->name('profile.dashboard');

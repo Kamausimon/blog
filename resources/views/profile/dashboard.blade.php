@@ -83,8 +83,37 @@
 
         <!-- render the data div -->
 
-        <div>
+        <div class="bg-gray-200 font-sans">
+            <div class="container mx-auto px-4">
 
+                <!-- Display posts as cards -->
+                @if ($posts->count())
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                    @foreach ($posts as $post)
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="p-6">
+                            <h5 class="text-xl font-bold mb-2">{{ $post->title }}</h5>
+                            @if(strlen($post->context)>100)
+                            <p class="text-gray-700 text-base">
+                                {{ \Illuminate\Support\Str::limit($post->context, 100, $end='...') }}
+                            </p>
+                            <a href="/post/{{$post->id}}" class="mt-4 inline-block bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700">
+                                Read More
+                            </a>
+                            @else
+                            <p class="mt-2 text-gray-600">{{$post->context}}</p>
+                            @endif
+                        </div>
+                    </div>
+                    @endforeach
+                </div>
+
+
+
+                @else
+                <p>No posts available.</p>
+                @endif
+            </div>
         </div>
 
         <!-- end of data rendering div -->

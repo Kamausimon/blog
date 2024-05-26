@@ -48,7 +48,7 @@ class PostController extends Controller
         $post->save();
 
         //redirect the user to show the post
-        return redirect()->route('post.show', $post);
+        return redirect()->route('post.show', $post)->with('success', 'post created successfully');
     }
 
     /**
@@ -112,6 +112,17 @@ class PostController extends Controller
     public function destroy(string $id)
     {
         //for deleting the post
+        $post = Post::find($id);
 
+        //if post is not there abort
+        if (!$post) {
+            abort(404);
+        }
+
+        //delete the post
+        $post->delete();
+
+        //redirect the user back to the dashboard
+        return redirect()->route('/profile.dashboard')->with('success', 'post deleted successfully');
     }
 }
