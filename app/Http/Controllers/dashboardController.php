@@ -12,8 +12,8 @@ class dashboardController extends Controller
      */
     public function index()
     {
-        $posts = Post::paginate(15);
-        return view('profile.dashboard')->with('posts', $posts);
+        $posts = Post::all();
+        return view('profile.dashboard', ['posts' => $posts]);
     }
 
     /**

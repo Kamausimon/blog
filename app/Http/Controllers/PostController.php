@@ -106,6 +106,12 @@ class PostController extends Controller
         return redirect()->route('post.show', ['id' => $post->id]);
     }
 
+    public function confirmDelete(string $id)
+    {
+        $post = Post::findorFail($id);
+        return view('post.confirmDelete')->with('post', $post);
+    }
+
     /**
      * Remove the specified resource from storage.
      */
@@ -123,6 +129,6 @@ class PostController extends Controller
         $post->delete();
 
         //redirect the user back to the dashboard
-        return redirect()->route('/profile.dashboard')->with('success', 'post deleted successfully');
+        return redirect()->route('profile.dashboard')->with('success', 'post deleted successfully');
     }
 }
