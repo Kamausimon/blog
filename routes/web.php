@@ -2,15 +2,15 @@
 
 use App\Http\Controllers\dashboardController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\registerController;
+use App\Http\Controllers\UserController;
 use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('Auth.welcome');
 });
-Route::get('/register', function () {
-    return view('Auth.register');
-});
+
 Route::get('/login', function () {
     return view('Auth.login');
 });
@@ -23,10 +23,10 @@ Route::get('/resetPassword', function () {
 Route::get('/dashboard', function () {
     return view('profile.dashboard');
 });
-Route::get('/posts/create', function () {
-    return view('post.create');
-});
+
+
 //postcontroller
+Route::get('/posts/create', [PostController::class, 'create'])->name('post.create');
 Route::post('/posts', [PostController::class, 'store']);
 Route::get('/post/{id}', [PostController::class, 'show'])->name('post.show');
 Route::get('/post/{id}/edit', [PostController::class, 'edit'])->name('post.edit');
@@ -38,3 +38,7 @@ Route::delete('/deletePost/{id}', [PostController::class, 'destroy'])->name('pos
 
 //dashboard controller
 Route::get('/dashboard', [dashboardController::class, 'index'])->name('profile.dashboard');
+
+//registercontroller
+Route::get('/register', [registerController::class, 'create'])->name('Auth.register');
+Route::post('/register', [registerController::class, 'store']);

@@ -6,14 +6,13 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\support\Facades\Hash;
 
-class UserController extends Controller
+class registerController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
     }
 
     /**
@@ -21,6 +20,7 @@ class UserController extends Controller
      */
     public function create()
     {
+        return view('Auth.register');
     }
 
     /**
@@ -28,6 +28,17 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
+        $validatedData = $request->validate([
+            'name' => 'required|max:255',
+            'email' => 'required|email|unique:users',
+            'password' => 'required|min:8|confirmed'
+        ]);
+
+        $user = new User;
+        $user->name = $validatedData['name'];
+        $user->email = $validatedData['email'];
+        $user->passord = Hash::name($validatedData['password']);
+        $user->save();
     }
 
     /**

@@ -7,19 +7,13 @@
     @include("partials._nav")
     <!--div housing the registration form-->
     <div class="w-full max-w-xs mx-auto mt-24">
-        <form action="" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+        <form action="/registerUser" method="POST" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+            @csrf
             <div class="mb-4">
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="fName">
-                    First Name:
+                    Name:
                 </label>
                 <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" name="fName" id="fName" placeholder="Enter Name Here..">
-            </div>
-
-            <div class="mb-4">
-                <label class="block text-gray-700 text-sm font-bold mb-2" for="sName">
-                    Second Name:
-                </label>
-                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" name="sName" id="sName" placeholder="Enter Name Here..">
             </div>
 
             <div class="mb-4">
