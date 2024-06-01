@@ -9,6 +9,7 @@ use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
+use App\Http\Controllers\resetPasswordController;
 
 Route::get('/', function () {
     return view('Auth.welcome');
@@ -16,9 +17,7 @@ Route::get('/', function () {
 
 
 
-Route::get('/resetPassword', function () {
-    return view('Auth.resetPassword');
-});
+
 Route::get('/dashboard', function () {
     return view('profile.dashboard');
 });
@@ -53,4 +52,7 @@ Route::post('/logout', [LogoutController::class, 'destroy'])->name('logout.destr
 //forgotpassword controller
 Route::get('/forgotPassword', [ForgotPasswordController::class, 'create'])->name('forgotPassword');
 Route::post('/forgotPassword', [ForgotPasswordController::class, 'store']);
-Route::post('forgotPassword/{token}', [ForgotPasswordController::class, 'reset']);
+
+//resetController
+Route::get('/resetPassword', [resetPasswordController::class, 'create'])->name('password.reset');
+Route::post('forgotPassword/{token}', [resetPasswordController::class, 'reset']);

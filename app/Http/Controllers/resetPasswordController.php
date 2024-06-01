@@ -4,9 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Password;
-use Pest\Support\Backtrace;
 
-class ForgotPasswordController extends Controller
+class resetPasswordController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +13,6 @@ class ForgotPasswordController extends Controller
     public function index()
     {
         //
-
     }
 
     /**
@@ -22,8 +20,7 @@ class ForgotPasswordController extends Controller
      */
     public function create()
     {
-        //
-        return view('Auth.forgotPassword');
+        return view('Auth.resetPassword');
     }
 
     /**
@@ -31,24 +28,22 @@ class ForgotPasswordController extends Controller
      */
     public function store(Request $request)
     {
-        //validate the email is correct
+        //
         $request->validate([
-            'email' => 'required|email'
+            'token' => 'required',
+            'email' => 'required|email',
+            'password' => 'required|confirmed|min:8|string'
         ]);
 
-        //use reset link to send the reset liunk
-        $status = Password::sendResetLink($request->only('email'));
-
-        return $status === Password::RESET_LINK_SENT ? back()->with('status', _($status)) :
-            back()->withInput($request->only('email'))->withErrors(['email' => _($status)]);
+        $status = Password::reset();
     }
+
     /**
      * Display the specified resource.
      */
-    public function show(Request $request)
+    public function show(string $id)
     {
         //
-
     }
 
     /**
