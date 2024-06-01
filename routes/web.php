@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\dashboardController;
+use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\registerController;
 use App\Http\Controllers\UserController;
@@ -14,9 +15,7 @@ Route::get('/', function () {
 });
 
 
-Route::get('/forgotPassword', function () {
-    return view('Auth.forgotPassword');
-});
+
 Route::get('/resetPassword', function () {
     return view('Auth.resetPassword');
 });
@@ -50,3 +49,8 @@ Route::post('/login', [LoginController::class, 'store']);
 
 //logoutController
 Route::post('/logout', [LogoutController::class, 'destroy'])->name('logout.destroy')->middleware('auth');
+
+//forgotpassword controller
+Route::get('/forgotPassword', [ForgotPasswordController::class, 'create'])->name('forgotPassword');
+Route::post('/forgotPassword', [ForgotPasswordController::class, 'store']);
+Route::post('forgotPassword/{token}', [ForgotPasswordController::class, 'reset']);
