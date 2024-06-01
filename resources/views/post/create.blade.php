@@ -19,8 +19,14 @@
                 @csrf
                 <label for="title" class="block mb-2 font-bold text-gray-700">Title:</label>
                 <input type="text" name="title" id="title" class="w-full p-2 border rounded shadow-inner">
+                @error('title')
+                <span class="text-red-500 text-xs italic">{{ $message }}</span>
+                @enderror
                 <label for="context" class="block mb-2 font-bold text-gray-700">Content:</label>
                 <textarea name="context" id="context" rows="6" cols="50" class="w-full p-2 border rounded shadow-inner"></textarea>
+                @error('context')
+                <span class="text-red-500 text-xs italic">{{ $message }}</span>
+                @enderror
                 <br>
                 <input type="submit" value="submit" class="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
             </form>

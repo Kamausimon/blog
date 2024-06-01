@@ -41,4 +41,4 @@ Route::get('/dashboard', [dashboardController::class, 'index'])->name('profile.d
 
 //registercontroller
 Route::get('/register', [registerController::class, 'create'])->name('Auth.register');
-Route::post('/register', [registerController::class, 'store']);
+Route::post('/registerUser', [registerController::class, 'store']);
