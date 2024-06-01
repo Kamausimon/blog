@@ -7,6 +7,7 @@ use App\Http\Controllers\UserController;
 use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\LogoutController;
 
 Route::get('/', function () {
     return view('Auth.welcome');
@@ -44,5 +45,8 @@ Route::post('/registerUser', [registerController::class, 'store']);
 
 
 //logincontroller
-Route::get('/login', [LoginController::class, 'create'])->name('Auth.login');
+Route::get('/login', [LoginController::class, 'create'])->name('login');
 Route::post('/login', [LoginController::class, 'store']);
+
+//logoutController
+Route::post('/logout', [LogoutController::class, 'destroy'])->name('logout.destroy')->middleware('auth');

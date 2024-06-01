@@ -10,7 +10,7 @@
     @include('partials._nav')
 
 
-    <div class="w-full max-w-xs mx-auto mt-24">
+    <div class="w-full max-w-xs mx-auto mt-36">
 
         <form action="/login" method="POST" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
             @csrf
@@ -37,8 +37,14 @@
                 <span class="text-red-500 text-xs italic">{{ $message }}</span>
                 @enderror
             </div>
+            <div>
+                <label for="remember" class="mb-1">
+                    <input type="checkbox" id="remember" name="remember">
+                    <span>Remember me</span>
+                </label>
+            </div>
 
-            <div class="flex items-center justify-between">
+            <div class=" flex items-center justify-between">
                 <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
                     Login
                 </button>

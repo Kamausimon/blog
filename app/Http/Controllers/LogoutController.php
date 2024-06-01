@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class LoginController extends Controller
+class LogoutController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,8 +20,7 @@ class LoginController extends Controller
      */
     public function create()
     {
-        //return the view
-        return view('Auth.login');
+        //
     }
 
     /**
@@ -29,24 +28,7 @@ class LoginController extends Controller
      */
     public function store(Request $request)
     {
-        //find the user in the db and log them in
-
-        $request->validate([
-            'email' => 'required|email',
-            'password' => 'required|min:8'
-        ]);
-
-        $credentials = $request->only('email', 'password');
-
-        if (Auth::attempt($credentials, $request->filled('remember'))) {
-            $request->session()->regenerate();
-
-            return redirect()->route('profile.dashboard');
-        }
-
-        return back()->withErrors([
-            'login' => 'One of the fields is incorrect'
-        ]);
+        //
     }
 
     /**
@@ -76,8 +58,14 @@ class LoginController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy()
     {
         //
+        Auth::logout();
+
+        request()->session()->invalidate();
+        request()->session()->regenerateToken();
+
+        return  redirect('/login');
     }
 }

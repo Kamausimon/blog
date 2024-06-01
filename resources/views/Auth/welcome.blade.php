@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 
-@include('partials/_head')
+@include('partials._head')
 
 <body class="bg-slate-700 text-white">
     @include('partials._nav')
