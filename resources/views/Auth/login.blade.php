@@ -2,19 +2,29 @@
 
 <html>
 
-@include('partials/_head')
+@include('partials._head')
 
 <body class="bg-slate-700">
 
     <!--div housing the login form-->
     @include('partials._nav')
+
+
     <div class="w-full max-w-xs mx-auto mt-24">
-        <form action="" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+
+        <form action="/login" method="POST" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+            @csrf
+            @if ($errors->has('login'))
+            <span class="text-red-600 text-md">{{ $errors->first('login') }}</span>
+            @endif
             <div class="mb-4">
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
                     Email:
                 </label>
                 <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" name="email" id="email" placeholder="email..">
+                @error('email')
+                <span class="text-red-500 text-xs italic">{{ $message }}</span>
+                @enderror
             </div>
 
             <div class="mb-6">
@@ -22,6 +32,10 @@
                     Password:
                 </label>
                 <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="password" name="password" id="password" placeholder="password..">
+                <input type="checkbox" id="togglePassword"> Show Password
+                @error('password')
+                <span class="text-red-500 text-xs italic">{{ $message }}</span>
+                @enderror
             </div>
 
             <div class="flex items-center justify-between">
@@ -39,6 +53,18 @@
     <!--footer-->
     @include('partials._footer')
     <!--end of footer-->
+
+    <script defer>
+        const togglePassword = document.getElementById('togglePassword');
+        const password = document.getElementById('password');
+
+
+        togglePassword.addEventListener('click', function(e) {
+            const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+            password.setAttribute('type', type);
+            this.classList.toggle('fa-eye-slash');
+        })
+    </script>
 
 </body>
 

@@ -6,14 +6,13 @@ use App\Http\Controllers\registerController;
 use App\Http\Controllers\UserController;
 use App\Models\Post;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LoginController;
 
 Route::get('/', function () {
     return view('Auth.welcome');
 });
 
-Route::get('/login', function () {
-    return view('Auth.login');
-});
+
 Route::get('/forgotPassword', function () {
     return view('Auth.forgotPassword');
 });
@@ -42,3 +41,8 @@ Route::get('/dashboard', [dashboardController::class, 'index'])->name('profile.d
 //registercontroller
 Route::get('/register', [registerController::class, 'create'])->name('Auth.register');
 Route::post('/registerUser', [registerController::class, 'store']);
+
+
+//logincontroller
+Route::get('/login', [LoginController::class, 'create'])->name('Auth.login');
+Route::post('/login', [LoginController::class, 'store']);
