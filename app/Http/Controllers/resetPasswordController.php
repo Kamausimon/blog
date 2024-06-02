@@ -20,15 +20,15 @@ class resetPasswordController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(Request $request, $token = null)
     {
-        return view('Auth.resetPassword');
+        return view('Auth.resetPassword')->with(['token' => $token, 'email' => $request->email]);
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function reset(Request $request)
     {
         //
         $request->validate([

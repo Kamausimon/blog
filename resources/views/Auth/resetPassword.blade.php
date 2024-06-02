@@ -9,7 +9,8 @@
 
     <!--start of reset password div-->
     <div class="w-full max-w-xs mx-auto mt-24">
-        <form action="{{route('password.update')}}" method="POST" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+        {{var_dump($token)}}
+        <form action="{{route('password.update',['token'=>$token]) }}" method="POST" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
             @csrf
             <input type="hidden" name="token" value="{{$token}}">
             <div class="mb-4 p-6">
