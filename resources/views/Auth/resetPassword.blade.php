@@ -9,12 +9,19 @@
 
     <!--start of reset password div-->
     <div class="w-full max-w-xs mx-auto mt-24">
-        {{var_dump($token)}}
-        <form action="{{route('password.update',['token'=>$token]) }}" method="POST" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+        <form action="{{ route('password.update') }}" method="POST" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
             @csrf
-            <input type="hidden" name="token" value="{{$token}}">
+            <input type="hidden" name="token" value="{{ $token }}">
             <div class="mb-4 p-6">
                 <h2 class="block text-gray-700 text-xl font-bold mb-3 p-3">Reset Password</h2>
+                <label class="block text-gray-700 text-sm font-bold mb-2 p-2" for="email">
+                    Email:
+                </label>
+                <input class="shadow appearance-none border rounded w-full p-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="email" name="email" id="email" value="{{ old('email', $email ?? '') }}" required>
+                @error('email')
+                <span class="text-red-500 text-xs italic">{{ $message }}</span>
+                @enderror
+
                 <label class="block text-gray-700 text-sm font-bold mb-2 p-2" for="password">
                     New Password:
                 </label>
