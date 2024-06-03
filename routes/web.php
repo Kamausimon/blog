@@ -55,4 +55,4 @@ Route::post('/forgotPassword', [ForgotPasswordController::class, 'store']);
 
 //resetController
 Route::get('/resetPassword/{token}', [resetPasswordController::class, 'create'])->name('password.reset');
-Route::post('resetPassword', [resetPasswordController::class, 'reset'])->name('password.update');
+Route::post('/updatePassword', [resetPasswordController::class, 'reset'])->name('password.update');

@@ -47,10 +47,10 @@ class registerController extends Controller
 
         Auth::login($user);
 
-        return redirect()->route('Auth.login')->with('success', 'user registered successfully');
+        return redirect()->route('login')->with('success', 'user registered successfully');
     }
 
-    /**
+    /*i*
      * Display the specified resource.
      */
     public function show(string $id)
