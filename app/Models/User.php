@@ -44,4 +44,10 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    //create a relation between the user and comments
+    public function comments()
+    {
+        return $this->hasMany(Comments::class);
+    }
 }
