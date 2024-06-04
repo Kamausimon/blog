@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Comments;
 
 class commentsController extends Controller
 {
@@ -19,7 +20,7 @@ class commentsController extends Controller
      */
     public function create()
     {
-        //
+        // 
     }
 
     /**
@@ -28,6 +29,18 @@ class commentsController extends Controller
     public function store(Request $request)
     {
         //
+        $request->validate([
+            'comment' => 'required',
+            'post_id' => 'required|exists:posts,id'
+        ]);
+
+        $comment = new Comments;
+        $comment->comment  = $request->comment;
+        $comment->user_id = auth()->id();
+        $comment->post_id = $request->post_id;
+        $comment->save();
+
+        return redirect()->back()->with('message', 'Comment added successfully');
     }
 
     /**
