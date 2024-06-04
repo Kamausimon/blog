@@ -45,6 +45,7 @@ class PostController extends Controller
         $post = new Post;
         $post->title = $request->input('title');
         $post->context = $request->input('context');
+        $post->user_id = auth()->id();
         $post->save();
 
         //redirect the user to show the post

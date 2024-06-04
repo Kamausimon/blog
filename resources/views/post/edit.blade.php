@@ -2,9 +2,12 @@
 <html>
 @include('partials._head')
 
+@include('partials._nav')
+
 <body class="bg-gray-100">
+
     <div class="flex justify-center items-center h-screen ">
-        <form action="{{route('post.update',['id'=>$post->id]) }}" method="POST" class="bg-white p-6 rounded shadow-md">
+        <form action="{{route('post.update',['id'=>$post->id]) }}" method="POST" class="bg-white p-6 rounded shadow-md mt-4">
             @method('PUT')
             @csrf
             <div class="mb-4">
