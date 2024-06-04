@@ -12,8 +12,17 @@ class dashboardController extends Controller
      */
     public function index()
     {
-        $posts = Post::where('user_id', auth()->id())->get();
+        $posts = Post::paginate(15);
         return view('profile.dashboard', ['posts' => $posts]);
+    }
+
+    //display user's posts only 
+
+    public function ownPosts()
+    {
+        $posts = Post::where('user_id', auth()->id())->paginate(15);
+
+        return view('profile.ownPosts', ['posts' => $posts]);
     }
 
     /**
