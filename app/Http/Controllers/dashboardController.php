@@ -12,7 +12,7 @@ class dashboardController extends Controller
      */
     public function index()
     {
-        $posts = Post::all();
+        $posts = Post::where('user_id', auth()->id())->get();
         return view('profile.dashboard', ['posts' => $posts]);
     }
 

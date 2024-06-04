@@ -126,8 +126,16 @@ class PostController extends Controller
             abort(404);
         }
 
-        //delete the post
-        $post->delete();
+
+        //if not the creator you cant delete
+        if ($post && $post->user_id === auth()->id()) {
+            //delete the post
+            $post->delete();
+            return redirect()->route('profile.dashboard')->with('message', 'post deleted successfully');
+        }
+
+
+
 
         //redirect the user back to the dashboard
         return redirect()->route('profile.dashboard')->with('success', 'post deleted successfully');
