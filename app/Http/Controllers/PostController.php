@@ -58,8 +58,8 @@ class PostController extends Controller
     public function show(string $id)
     {
         //shows one specific post from the db
-        $post = Post::find($id);
-        return view('post.show')->with('post', $post);
+        $post = Post::with('comments')->find($id);
+        return view('post.show', compact('post'));
     }
 
     /**

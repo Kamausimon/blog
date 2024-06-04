@@ -29,6 +29,28 @@
             </div>
             <p class="text-gray-700 ">{{$post->context}}</p>
         </div>
+
+        <div>
+            @if(auth()->id() !== $post->user_id)
+            <h2 class="text-xl font-bold mb-2">Add a comment</h2>
+            <form method="POST" action="{{ route('comments.store') }}" class="mb-4">
+                @csrf
+                <input type="hidden" name="post_id" value="{{ $post->id }}">
+                <textarea name="comment" required class="w-full p-2 mb-2 border rounded"></textarea>
+                <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Submit</button>
+            </form>
+            @endif
+        </div>
+
+        <div>
+            <h2 class="text-xl font-bold mb-2">Comments</h2>
+            @foreach($post->comments as $comment)
+            <div class="mb-4 border-b pb-2">
+                <p class="mb-1">{{$comment->comment}}</p>
+                <p class="text-sm text-gray-600">Posted by: {{$comment->user->name}}</p>
+            </div>
+            @endforeach
+        </div>
     </div>
 
 </body>

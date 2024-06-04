@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\commentsController;
 use App\Http\Controllers\dashboardController;
 use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\PostController;
@@ -59,3 +60,7 @@ Route::post('/forgotPassword', [ForgotPasswordController::class, 'store']);
 //resetController
 Route::get('/resetPassword/{token}', [resetPasswordController::class, 'create'])->name('password.reset');
 Route::post('/updatePassword', [resetPasswordController::class, 'reset'])->name('password.update');
+
+
+//commentscontroller
+Route::post('/comments', [commentsController::class, 'store'])->name('comments.store');
