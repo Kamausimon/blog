@@ -38,8 +38,13 @@ Route::middleware(['auth'])->group(function () {
 
 
 //dashboard controller
-Route::get('/dashboard', [dashboardController::class, 'index'])->name('profile.dashboard')->middleware('auth');
-Route::get('/myPosts', [dashboardController::class, 'ownPosts'])->name('profile.ownPosts')->middleware('auth');
+Route::middleware(['auth'])->group(function () {
+    Route::get('/dashboard', [dashboardController::class, 'index'])->name('profile.dashboard');
+    Route::get('/myPosts', [dashboardController::class, 'ownPosts'])->name('profile.ownPosts');
+    Route::get('/posts/search', [dashboardController::class, 'search'])->name('posts.search');
+    Route::get('myprofile', [dashboardController::class, 'myProfile'])->name('dashboard.myProfile');
+});
+
 
 //registercontroller
 Route::get('/register', [registerController::class, 'create'])->name('Auth.register');
