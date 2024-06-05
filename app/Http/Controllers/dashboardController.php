@@ -35,4 +35,11 @@ class dashboardController extends Controller
 
         return view('profile.dashboard', ['posts' => $posts]);
     }
+
+    public function myProfile()
+    {
+        $user = auth()->user();
+
+        return view('profile.MyProfile', ['user' => $user]);
+    }
 }
