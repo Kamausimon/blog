@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Post;
 
 class welcomeController extends Controller
 {
@@ -12,6 +13,9 @@ class welcomeController extends Controller
     public function index()
     {
         //
+        $posts = Post::inRandomOrder()->take(2)->get();
+
+        return view('Auth.welcome', ['posts' => $posts]);
     }
 
     /**
@@ -20,6 +24,7 @@ class welcomeController extends Controller
     public function create()
     {
         //
+
     }
 
     /**

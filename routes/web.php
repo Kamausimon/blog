@@ -11,18 +11,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\resetPasswordController;
-
-Route::get('/', function () {
-    return view('Auth.welcome');
-});
-
-
-
-
-Route::get('/dashboard', function () {
-    return view('profile.dashboard');
-});
-
+use App\Http\Controllers\welcomeController;
 
 //postcontroller
 Route::middleware(['auth'])->group(function () {
@@ -69,3 +58,7 @@ Route::post('/updatePassword', [resetPasswordController::class, 'reset'])->name(
 
 //commentscontroller
 Route::post('/comments', [commentsController::class, 'store'])->name('comments.store');
+
+
+//welcomeController
+Route::get('/', [welcomeController::class, 'index'])->name('Auth.welcome');
