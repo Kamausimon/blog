@@ -1,5 +1,5 @@
-  <div class="p-6 bg-slate-200 flex justify-between">
-      <div class="">
+  <div class="p-6 bg-slate-600 flex justify-between flex-wrap items-center">
+      <div class="w-full lg:w-auto mb-4 lg:mb-0">
           <form action="{{route('posts.search')}}" method="GET">
 
               <input type="search" name="query" placeholder="search here" class="bg-slate-400 h-8 mr-0 rounded-md text-slate-600">
@@ -7,7 +7,7 @@
           </form>
       </div>
 
-      <div class=" flex justify-between">
+      <div class=" flex items-center space-x-4">
 
           <svg mr-3 xmlns="http://www.w3.org/2000/svg" width="3em" height="3em" viewBox="0 0 24 24">
               <title>Wallet</title>
@@ -15,7 +15,7 @@
               <circle cx="16.5" cy="14" r="1.25" fill="white" />
           </svg>
 
-          <a href="{{route('dashboard.myProfile')}}"> <svg class="ml-3 mr-10 " xmlns="http://www.w3.org/2000/svg" width="3em" height="3em" viewBox="0 0 24 24">
+          <a href="{{route('dashboard.myProfile')}}"> <svg class="w-8 h-8  " xmlns="http://www.w3.org/2000/svg" width="3em" height="3em" viewBox="0 0 24 24">
                   <title>MyProfile</title>
                   <path fill="grey" fill-rule="evenodd" d="M8 7a4 4 0 1 1 8 0a4 4 0 0 1-8 0m0 6a5 5 0 0 0-5 5a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3a5 5 0 0 0-5-5z" clip-rule="evenodd" />
               </svg></a>
