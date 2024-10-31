@@ -2,13 +2,13 @@
 <html>
 @include('partials._head');
 
-<body>
+<body class="flex flex-col lg:flex-row">
     @include('partials._sidebar')
 
-    <div class=" ml-64 w-full bg-slate-200">
+    <div class=" flex-1 bg-slate-200 min-h-screen">
         @include('partials._dashNav')
 
-        <div class="bg-gray-200 font-sans h-screen">
+        <div class="p-4">
             @include('partials._cardComponent')
         </div>
 
