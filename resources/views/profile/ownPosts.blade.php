@@ -18,6 +18,15 @@
 
 
     @include('partials._footer')
+    <!-- JavaScript -->
+    <script>
+        const sidebar = document.getElementById('sidebar');
+        const toggleButton = document.getElementById('sidebarToggle');
+
+        toggleButton.addEventListener('click', () => {
+            sidebar.classList.toggle('hidden');
+        });
+    </script>
 </body>
 
 </html>
