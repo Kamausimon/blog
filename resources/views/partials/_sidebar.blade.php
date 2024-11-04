@@ -1,9 +1,10 @@
- <div class="fixed lg:static inset-y-0 left-0 z-30 w-64 lg:w-64 overflow-y-auto bg-white transition-transform transform -translate-x-full lg:translate-x-0" id="sidebar">
+ <div class="bg-white p-4 shadow-lg lg:w-64 lg:block hidden" id="sidebar">
      <img class="block " src="/images/the-crying-wall-high-resolution-logo-black-transparent.png" alt="logo">
      <h2 class="text-2xl font-bold mb-4 flex items-center mt-24"> <svg class="mr-2" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 512 512">
              <path fill="currentColor" d="M416 174.74V48h-80v58.45L256 32L0 272h64v208h144V320h96v160h144V272h64z" />
          </svg>DashBoard</h2>
 
+     </button>
      <div class="space-y-9 h-5/6 flex flex-col mt-16 ml-3 ">
 
          <a href="{{route('profile.dashboard')}}">

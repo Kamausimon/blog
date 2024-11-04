@@ -14,7 +14,7 @@
         <!--nav 2-->
         <div class="bg-slate-200 sticky top-0 z-20">
             <!--mobile nav-->
-            <div class="flex items-center p-4 lg:hidden">
+            <div>
                 <button class="lg:hidden p-4" id="sidebarToggle">
                     <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 32 32">
                         <path fill="none"
